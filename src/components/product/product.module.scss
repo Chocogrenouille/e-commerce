@@ -1,0 +1,12 @@
+@import '../../../styles/global-styles.scss';
+
+.product {
+  display: flex;
+  padding: 4 * $unit 10 * $unit 0;
+  gap: 10 * $unit;
+  align-items: center;
+
+  &:first-child {
+    width: 50%;
+  }
+}

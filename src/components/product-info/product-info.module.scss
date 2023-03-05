@@ -1,0 +1,50 @@
+@import '../../../styles/global-styles.scss';
+
+.productInfo {
+  aside {
+    color: $bright-orange;
+    font-size: 0.8 * $unit;
+    font-weight: bold;
+    margin-bottom: 0.4 * $unit;
+  }
+
+  h1 {
+    margin-bottom: $unit;
+  }
+
+  p {
+    color: $dark-gray-blue;
+  }
+
+  .productPrice {
+    font-weight: bold;
+    padding: 2 * $unit 0;
+    display: grid;
+    grid-template-columns: min-content min-content;
+    grid-template-areas:
+      'new-price discount'
+      'old-price .';
+    align-items: center;
+
+    .discount {
+      grid-area: discount;
+      background: $pale-orange;
+      color: $bright-orange;
+      padding: 0.3 * $unit;
+      border-radius: $button-border-radius;
+      font-size: 0.9 * $unit;
+    }
+
+    .newPrice {
+      grid-area: new-price;
+      font-size: 1.5 * $unit;
+      margin-right: $unit;
+    }
+
+    .oldPrice {
+      grid-area: old-price;
+      text-decoration: line-through;
+      color: $dark-gray-blue;
+    }
+  }
+}

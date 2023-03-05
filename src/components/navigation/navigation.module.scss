@@ -1,0 +1,60 @@
+@import '../../../styles/global-styles.scss';
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2 * $unit 8 * $unit 0;
+  border-bottom: 2px solid $light-gray-blue;
+
+  .logoNavigation {
+    display: flex;
+
+    .logo {
+      margin-right: 5 * $unit;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      color: $dark-gray-blue;
+      padding: 0;
+      margin: 0;
+
+      li {
+        padding-bottom: 1.5 * $unit;
+        border-bottom: 4px solid transparent;
+      }
+
+      li:not(last-child) {
+        margin-right: 1.5 * $unit;
+      }
+
+      li:hover {
+        cursor: pointer;
+        border-bottom: 4px solid $bright-orange;
+      }
+    }
+  }
+
+  .shoppingCartUserAvatar {
+    display: flex;
+    align-items: center;
+
+    .userAvatar > img {
+      width: 50px;
+      height: 50px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .shoppingCart {
+      margin-right: 2 * $unit;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
