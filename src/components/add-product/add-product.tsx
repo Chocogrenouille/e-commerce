@@ -1,13 +1,26 @@
 import { useState } from 'react'
 import styles from './add-product.module.scss'
+import productImage1Thumbnail from '../../images/image-product-1-thumbnail.jpg'
+import { shoppingCartItemProps } from '../../../types'
 
-export default function AddProduct({ setShoppingCart, shoppingCart }: any) {
+export default function AddProduct({
+  setShoppingCart,
+  shoppingCart,
+}: {
+  shoppingCart: shoppingCartItemProps[]
+  setShoppingCart: (item: shoppingCartItemProps[]) => void
+}) {
   const [quantity, setQuantity] = useState(0)
 
-  const addToCart = (productName: string, quantity: number) => {
+  const addToCart = (
+    productName: string,
+    quantity: number,
+    productImage: string
+  ) => {
     if (shoppingCart.length === 0) {
       setShoppingCart([
         {
+          image: productImage,
           name: productName,
           quantity: quantity,
           price: 125,
@@ -15,9 +28,8 @@ export default function AddProduct({ setShoppingCart, shoppingCart }: any) {
       ])
     } else {
       setShoppingCart(
-        shoppingCart.map((item) => {
+        shoppingCart.map((item: shoppingCartItemProps) => {
           if (item.name === productName) {
-            console.log('hey')
             return { ...item, quantity }
           } else {
             return item
@@ -48,7 +60,13 @@ export default function AddProduct({ setShoppingCart, shoppingCart }: any) {
       </div>
       <div className={styles.addButtonShoppingCart}>
         <button
-          onClick={() => addToCart('Fall Limited Edition Sneakers', quantity)}
+          onClick={() =>
+            addToCart(
+              'Fall Limited Edition Sneakers',
+              quantity,
+              productImage1Thumbnail
+            )
+          }
         >
           <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
             <path

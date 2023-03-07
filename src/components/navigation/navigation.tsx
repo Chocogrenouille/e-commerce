@@ -1,11 +1,12 @@
 import styles from './navigation.module.scss'
 import userAvatar from '../../images/image-avatar.png'
+import { SetStateAction, Dispatch } from 'react'
 
-interface Navigationprops {
-  setShowShoppingCart: (arg: boolean) => void
-}
-
-function Navigation({ setShowShoppingCart }: Navigationprops) {
+function Navigation({
+  setShowShoppingCart,
+}: {
+  setShowShoppingCart: Dispatch<SetStateAction<boolean>>
+}) {
   return (
     <nav className={styles.navigation}>
       <div className={styles.logoNavigation}>

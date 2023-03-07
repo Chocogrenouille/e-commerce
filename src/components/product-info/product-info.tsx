@@ -1,7 +1,15 @@
+import { shoppingCartItemProps } from '../../../types'
 import AddProduct from '../add-product/add-product'
 import styles from './product-info.module.scss'
+import { Dispatch, SetStateAction } from 'react'
 
-export default function ProductInfo({ setShoppingCart, shoppingCart }: any) {
+export default function ProductInfo({
+  setShoppingCart,
+  shoppingCart,
+}: {
+  shoppingCart: shoppingCartItemProps[]
+  setShoppingCart: Dispatch<SetStateAction<shoppingCartItemProps[]>>
+}) {
   return (
     <section className={styles.productInfo}>
       <aside>SNEAKER COMPANY</aside>

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import styles from './modal.module.scss'
 
 export function Modal(props: {
-  setShowModal: any
+  setShowModal: (show: boolean) => void
   images: { thumbnail: string; focusImage: string }[]
 }) {
   const { setShowModal, images } = props
