@@ -6,10 +6,18 @@
   top: 70px;
   left: calc(50% - 250px);
 
+  @include phone {
+    position: static;
+  }
+
   .focusImage {
     img {
       height: 500px;
       border-radius: $button-border-radius;
+
+      @include phone {
+        border-radius: 0;
+      }
     }
   }
 
@@ -69,14 +77,28 @@
     width: 3 * $unit;
     height: 3 * $unit;
     top: 250px;
+
+    @include phone {
+      top: calc(50% - $unit);
+      width: 2 * $unit;
+      height: 2 * $unit;
+    }
   }
 
   .nextArrow {
     right: -1.5 * $unit;
+
+    @include phone {
+      right: 1 * $unit;
+    }
   }
 
   .prevArrow {
     left: -1.5 * $unit;
+
+    @include phone {
+      left: 1 * $unit;
+    }
   }
 
   .closeButton {

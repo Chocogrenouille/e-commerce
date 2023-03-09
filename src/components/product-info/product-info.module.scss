@@ -16,15 +16,23 @@
     color: $dark-gray-blue;
   }
 
+  @include phone {
+    padding: 0 $unit 5 * $unit;
+  }
+
   .productPrice {
     font-weight: bold;
     padding: 2 * $unit 0;
     display: grid;
-    grid-template-columns: min-content min-content;
+    grid-template-columns: min-content min-content auto min-content;
+    align-items: center;
     grid-template-areas:
       'new-price discount'
       'old-price .';
-    align-items: center;
+
+    @include phone {
+      grid-template-areas: 'new-price discount . old-price';
+    }
 
     .discount {
       grid-area: discount;
@@ -43,6 +51,7 @@
 
     .oldPrice {
       grid-area: old-price;
+      justify-self: end;
       text-decoration: line-through;
       color: $dark-gray-blue;
     }

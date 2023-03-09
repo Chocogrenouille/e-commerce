@@ -1,36 +1,14 @@
 import { useState } from 'react'
-import { Modal } from '../modal/modal'
+import Modal from '../modal/modal'
 import styles from './slider.module.scss'
-import productImage1 from '../../images/image-product-1.jpg'
-import productImage2 from '../../images/image-product-2.jpg'
-import productImage3 from '../../images/image-product-3.jpg'
-import productImage4 from '../../images/image-product-4.jpg'
-import productImage1Thumbnail from '../../images/image-product-1-thumbnail.jpg'
-import productImage2Thumbnail from '../../images/image-product-2-thumbnail.jpg'
-import productImage3Thumbnail from '../../images/image-product-3-thumbnail.jpg'
-import productImage4Thumbnail from '../../images/image-product-4-thumbnail.jpg'
 
-export default function Slider() {
-  const [activeImage, setActiveImage] = useState(productImage1)
+export default function Slider({
+  images,
+}: {
+  images: { thumbnail: any; focusImage: any }[]
+}) {
+  const [activeImage, setActiveImage] = useState(images[0].focusImage)
   const [showModal, setShowModal] = useState(false)
-  const images = [
-    {
-      thumbnail: productImage1Thumbnail,
-      focusImage: productImage1,
-    },
-    {
-      thumbnail: productImage2Thumbnail,
-      focusImage: productImage2,
-    },
-    {
-      thumbnail: productImage3Thumbnail,
-      focusImage: productImage3,
-    },
-    {
-      thumbnail: productImage4Thumbnail,
-      focusImage: productImage4,
-    },
-  ]
 
   return (
     <div className={styles.slider}>
@@ -53,7 +31,9 @@ export default function Slider() {
           </figure>
         ))}
       </div>
-      {showModal && <Modal setShowModal={setShowModal} images={images} />}
+      {showModal && (
+        <Modal isMobile={false} setShowModal={setShowModal} images={images} />
+      )}
     </div>
   )
 }

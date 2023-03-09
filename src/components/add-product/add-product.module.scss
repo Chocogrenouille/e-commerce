@@ -3,16 +3,31 @@
 .addProduct {
   display: flex;
   justify-content: space-between;
+
+  @include phone {
+    flex-direction: column;
+  }
 }
 
 .selectProductQuantity {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   background: $light-gray-blue;
   font-weight: 700;
   border-radius: $button-border-radius;
-  padding: calc($unit * 0.3) 0;
+  padding: 0.5 * $unit $unit;
+  width: 35%;
+
+  @include phone {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.5 * $unit 4 * $unit;
+  }
 
   button {
-    padding: 0 $unit;
     background: none;
     color: $bright-orange;
     font-size: calc($unit * 1.5);
@@ -33,13 +48,22 @@
     border: none;
     border-radius: $button-border-radius;
     color: $white;
-    box-shadow: 0px 5px 3px $pale-orange;
+    box-shadow: 0px 26px 45px -17px rgba(255, 125, 26, 0.43);
     font-weight: 700;
-    padding: calc($unit * 0.5) calc($unit * 1.5);
+    padding: $unit $unit * 1.5;
 
     &:hover {
       opacity: 0.75;
       cursor: pointer;
+    }
+
+    svg {
+      margin-right: $unit;
+    }
+
+    @include phone {
+      margin-top: 2 * $unit;
+      width: 100%;
     }
   }
 }

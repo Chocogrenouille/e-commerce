@@ -9,6 +9,13 @@
   right: 125px;
   top: 70px;
 
+  @include phone {
+    width: 90%;
+    right: 5%;
+    top: 90px;
+    box-shadow: 0px 20px 52px 8px rgba(0, 0, 0, 0.5);
+  }
+
   h5 {
     font-size: 1.2rem;
     padding: 1rem 1rem 0.6rem 1rem;
@@ -74,7 +81,7 @@
   }
 
   .emptyCart {
-    padding: 1rem 1rem 0.6rem 1rem;
+    padding: 2rem 1rem 3rem 1rem;
     font-weight: bold;
     color: $dark-gray-blue;
     text-align: center;
