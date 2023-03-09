@@ -4,6 +4,10 @@
   .focusImage > img {
     width: 100%;
     border-radius: $button-border-radius;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .thumbnailWrapper {
@@ -12,11 +16,20 @@
     gap: $unit;
     margin-top: $unit;
 
-    .thumbnailImage > img {
+    .thumbnailImage {
       border-radius: $button-border-radius;
+
       &:hover {
-        opacity: 60%;
-        cursor: pointer;
+        outline: 2px solid $bright-orange;
+      }
+
+      img {
+        border-radius: $button-border-radius;
+
+        &:hover {
+          opacity: 60%;
+          cursor: pointer;
+        }
       }
     }
   }

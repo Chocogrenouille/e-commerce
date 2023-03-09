@@ -32,8 +32,6 @@ export default function Slider() {
     },
   ]
 
-  console.log(typeof productImage1Thumbnail)
-
   return (
     <div className={styles.slider}>
       {showModal && <div className={styles.overlay}></div>}

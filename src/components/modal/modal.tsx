@@ -75,6 +75,7 @@ export function Modal(props: {
               alt=""
               onClick={() => setActiveImage(index)}
             />
+            <div className={styles.thumbnailOverlay}></div>
           </figure>
         ))}
       </div>
