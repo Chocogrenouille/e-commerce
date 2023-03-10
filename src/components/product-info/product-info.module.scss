@@ -51,9 +51,12 @@
 
     .oldPrice {
       grid-area: old-price;
-      justify-self: end;
       text-decoration: line-through;
       color: $dark-gray-blue;
+
+      @include phone {
+        justify-self: end;
+      }
     }
   }
 }

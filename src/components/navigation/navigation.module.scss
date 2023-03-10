@@ -19,6 +19,7 @@
     position: fixed;
     z-index: 1;
     top: 0;
+    left: 0;
     opacity: 0.7;
   }
 
@@ -40,7 +41,7 @@
     }
 
     .showMenu {
-      transform: translate(-$unit, 0);
+      transform: translate(0, 0);
       transition: transform 500ms ease-in-out;
     }
 
@@ -54,6 +55,7 @@
         position: fixed;
         z-index: 2;
         top: 0;
+        left: 0;
         height: 100%;
         width: 40%;
         padding: $unit;

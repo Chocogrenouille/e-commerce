@@ -8,14 +8,20 @@
 
   @include phone {
     position: static;
+    left: 0;
+    top: 0;
+    z-index: 0;
   }
 
   .focusImage {
+    position: relative;
+
     img {
       height: 500px;
       border-radius: $button-border-radius;
 
       @include phone {
+        height: unset;
         border-radius: 0;
       }
     }
